@@ -7,11 +7,11 @@ var schema = new Schema({
         type: String, 
         required: true, 
         unique: true
-    }
+    },
     displayName: {
         type: String, 
         required: true, 
-    }
+    },
     password: {
         type: String, 
         required: true

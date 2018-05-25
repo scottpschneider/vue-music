@@ -13,7 +13,11 @@ app.use(bp.json())
 app.use(bp.urlencoded({extended: true}))
 
 //routes
-var music = require('./server-assets/routes/music')
+var playlists = require('./server-assets/routes/playlists')
+app.use(playlists.router)
 
 //register middlewear
 
+app.listen(port, ()=>{
+    console.log('server listening on port', port)
+})
