@@ -62,8 +62,9 @@ router.post('/api/playlists/:listId', (req, res, next) => {
 
 router.put('/api/playlists/:Id/songs', (req, res, next) => {
     Playlists.findById(req.params.listId).then(playlist=>{
-        playlist.songs.$addToSet(req.body)
+        playlist.songs.addToSet(req.body)
         playlist.save()
+        res.send(playlist)
             .then(()=>{
                 res.send(playlist)
             })

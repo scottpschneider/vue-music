@@ -17,6 +17,11 @@ var playlists = require('./server-assets/routes/playlists')
 app.use(playlists.router)
 
 //register middlewear
+app.get('*', (req,res,next)=>{
+ res.status(400).send ({
+    error: 'No matching routes'
+})
+})
 
 app.listen(port, ()=>{
     console.log('server listening on port', port)
